@@ -26,19 +26,16 @@ jobs:
           flutter-version: '3.19.0'
           channel: 'stable'
 
-      - name: Pre-configure Android
-        run: |
-          mkdir -p android
-          echo "flutter.sdk=$FLUTTER_ROOT" > android/local.properties
-
       - name: Install dependencies
         run: flutter pub get
+        working-directory: SSSSSSS
 
       - name: Build APK
         run: flutter build apk --release
+        working-directory: SSSSSSS
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+          path: SSSSSSS/build/app/outputs/flutter-apk/app-release.apk
